@@ -1,0 +1,26 @@
+neptune-sysctl-config (1.6-9) stretch; urgency=medium
+
+  * Added swapout scripts
+
+ -- Leszek Lesner <leszek@zevenos.com>  Tue, 08 May 2018 14:35:40 +0200
+
+neptune-sysctl-config (1.2-3) unstable; urgency=low
+
+  * Reduced MinKernelMem to 400 MB
+
+ -- Leszek Lesner <leszek@zevenos.com>  Mon, 21 Oct 2013 20:39:40 +0200
+
+neptune-sysctl-config (1.2-2) unstable; urgency=low
+
+  * Prefer cleaning dentry/inode caches (vm.vfs_cache_pressure was set
+    wrongly fixed now)
+  * Tweak swapping (vm.page-cluster) to be not so I/O intensive
+  * Fixed postrm script to check if neptune.conf is there in /etc/sysctl.d
+
+ -- Leszek Lesner <leszek@zevenos.com>  Fri, 06 Sep 2013 23:07:08 +0200
+
+neptune-sysctl-config (1.2-1) unstable; urgency=low
+
+  * Tweak network settings to have faster connection speed
+
+ -- Leszek Lesner <leszek@zevenos.com>  Wed, 04 Sep 2013 13:48:35 +0200

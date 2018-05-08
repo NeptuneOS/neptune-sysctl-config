@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# This is a helper script to set the swappiness
+
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
+_set_swappiness() {
+   FILENAME=$1
+   VALUE=$2
+   sed -i -e "s/^vm.swappiness = .*\$/vm.swappiness = $VALUE/" $FILENAME
+   sysctl -p $FILENAME
+}
+
+set_swappiness() {
+  VALUE=$1
+  if [ -e /etc/sysctl.d/neptune.conf ]; then
+    _set_swappiness /etc/sysctl.d/neptune.conf $VALUE
+  elif [ -e /etc/sysctl.d/99-swappiness.conf ]; then
+    _set_swappiness /etc/sysctl.d/99-swappiness.conf $VALUE
+  else
+    echo "vm.swappiness=$VALUE" > /etc/sysctl.d/99-swappiness.conf
+  fi    
+}
+
+if [ $# -ne 0 ]
+  then
+    set_swappiness $1
+fi

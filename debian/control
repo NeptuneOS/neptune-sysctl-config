@@ -1,0 +1,13 @@
+Source: neptune-sysctl-config
+Section: system
+Priority: extra
+Maintainer: Leszek Lesner <leszek@zevenos.com>
+Homepage: https://www.neptuneos.com
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.7.2
+
+Package: neptune-sysctl-config
+Architecture: all
+Description: Neptune Sysctl Config
+ This package contains the neptune sysctl config that sets swapping to low 
+ and optimizes cache_pressure and dirty caches.

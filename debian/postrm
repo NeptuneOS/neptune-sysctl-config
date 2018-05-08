@@ -1,0 +1,7 @@
+#!/bin/bash
+# by Leszek Lesner
+# released under the terms of GPLv2
+
+if [ -e /etc/sysctl.d/neptune.conf ]; then
+   rm /etc/sysctl.d/neptune.conf
+fi
