@@ -14,7 +14,7 @@ fi
 # Include swapout functions
 source /usr/bin/swapout
 
-VALUE=20
+VALUE=5
 
 echo "Set vm.swappiness to a low value to swap out pages later"
 echo "" 

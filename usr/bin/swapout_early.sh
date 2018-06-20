@@ -14,7 +14,7 @@ fi
 # Include swapout functions
 source /usr/bin/swapout
 
-VALUE=80
+VALUE=95
 
 echo "Set vm.swappiness to a high value to swap out pages earlier"
 echo "" 
